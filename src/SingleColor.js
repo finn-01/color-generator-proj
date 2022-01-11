@@ -6,8 +6,8 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
 	const [alert, setAlert] = useState(false);
 	const bcg = rgb.join(",");
 	const hex = rgbToHex(...rgb);
-	const hexValue = `#${hexColor}`;
-	console.log(bcg);
+	const hexValue = `#${hexColor}`; //ten ma mau
+	//console.log(bcg); join ex (145,145,145)
 
 	useEffect(() => {
 		const timeOut = setTimeout(() => {
