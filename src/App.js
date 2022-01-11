@@ -11,7 +11,14 @@ const App = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log("Hello World");
+		try {
+			let colors = new Values(color).all(10);
+			console.log(colors);
+			setList(colors);
+		} catch (error) {
+			setError(true);
+			console.log(error);
+		}
 	};
 
 	return (
@@ -20,7 +27,7 @@ const App = () => {
 				<h3>color generator</h3>
 				<form onSubmit={handleSubmit}>
 					<input
-						placeholder="f15025"
+						placeholder="#f15025"
 						type="text"
 						value={color}
 						onChange={(e) => setColor(e.target.value)}
